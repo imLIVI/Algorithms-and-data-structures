@@ -1,9 +1,9 @@
 import java.util.Scanner;
 
-public class Main {
+public class TriangularNumbers {
+    private static int n;
 
     public static void main(String[] args) {
-
         // 1. Preparing variables
         Scanner input = new Scanner(System.in);
         int n = 0;
@@ -64,4 +64,5 @@ public class Main {
             n--;
         }
     }
+
 }
