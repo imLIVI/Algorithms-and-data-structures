@@ -10,7 +10,7 @@ We want to determine the value of an arbitrary **n**-th number in the series - f
 </p>
 
 ### The functionality of the program
-* Calculating the nth triangular number using:
+* Calculating the n-th triangular number using:
   * recursions
   * cycle
 * Comparison of working time
@@ -18,39 +18,35 @@ We want to determine the value of an arbitrary **n**-th number in the series - f
 ### Example
 ```
 To output triangular numbers, enter n - the last iteration of calculations(NUMBER): 
-28
+5
 
 Graphical representation: 
- *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  * 
- *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  * 
- *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  * 
- *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  * 
- *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  * 
- *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  * 
- *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  * 
- *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  * 
- *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  * 
- *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  * 
- *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  * 
- *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  * 
- *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  * 
- *  *  *  *  *  *  *  *  *  *  *  *  *  *  * 
- *  *  *  *  *  *  *  *  *  *  *  *  *  * 
- *  *  *  *  *  *  *  *  *  *  *  *  * 
- *  *  *  *  *  *  *  *  *  *  *  * 
- *  *  *  *  *  *  *  *  *  *  * 
- *  *  *  *  *  *  *  *  *  * 
- *  *  *  *  *  *  *  *  * 
- *  *  *  *  *  *  *  * 
- *  *  *  *  *  *  * 
- *  *  *  *  *  * 
  *  *  *  *  * 
  *  *  *  * 
  *  *  * 
  *  * 
  * 
             Recursion    Cycle     
-Result      406          406       
-Time, ns    3200         1300      
+Result      15           15        
+Time, ns    2100         1100      
+```
+## 2. Factorial
+
+### Description
+Determine the <a href="https://en.wikipedia.org/wiki/Factorial">factorial</a> of **n**-th number.
+
+### The functionality of the program
+* Calculating factorial using:
+  * recursions
+  * cycle
+* Comparison of working time
+
+### Example
+```
+Enter n (NUMBER): 
+5
+            Recursion    Cycle     
+Result      120          120       
+Time, ns    3300         1100      
 ```
 
