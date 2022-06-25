@@ -49,4 +49,25 @@ Enter n (NUMBER):
 Result      120          120       
 Time, ns    3300         1100      
 ```
+## 3. Anagrams
 
+### Description
+
+It is required to make a complete list of anagrams of a given word, that is, all possible permutations of letters (regardless of whether they are valid words or not). For example, for the word *cat*, the program should output the following list of anagrams:
+```
+cat
+cta
+atc
+act
+tca
+tac
+```
+### Example
+```
+Enter the word: 
+love
+  1 love   2 loev   3 lveo   4 lvoe   5 leov   6 levo 
+  7 ovel   8 ovle   9 oelv  10 oevl  11 olve  12 olev 
+ 13 velo  14 veol  15 vloe  16 vleo  17 voel  18 vole 
+ 19 elov  20 elvo  21 eovl  22 eolv  23 evlo  24 evol 
+```
