@@ -11,12 +11,16 @@ public class Main {
 
         // Print the array
         System.out.println("Array before sorting: ");
-        printArray();
+        printArray(array);
 
         // Bubble sort
-        array = BubbleSort.bubbleSort(array);
         System.out.println("\nArray after bubble sorting: ");
-        printArray();
+        printArray(BubbleSort.bubbleSort(array));
+
+        // Sorting by choice
+        System.out.println("\nArray after sorting by choice: ");
+        printArray(SortingByChoice.sortingByChoice(array));
+
     }
 
     public static void fillArray() {
@@ -26,7 +30,7 @@ public class Main {
         }
     }
 
-    public static void printArray(){
+    public static void printArray(int[] array){
         for (int j = 0; j < ARRAY_SIZE; j++) {
             System.out.print(array[j] + " ");
         }
