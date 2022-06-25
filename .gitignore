@@ -1,4 +1,4 @@
 *.pdf
 *.idea
-out/*
+*/out/*
 *.iml
