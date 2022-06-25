@@ -7,19 +7,20 @@ public class Main {
     public static void main(String[] args) {
 
         // Filling an array with random numbers
+        System.out.println("Array before sorting: ");
         fillArray();
 
-        // Print the array
-        System.out.println("Array before sorting: ");
-        printArray(array);
-
         // Bubble sort
-        System.out.println("\nArray after bubble sorting: ");
+        System.out.println("\n---Bubble sorting---");
         printArray(BubbleSort.bubbleSort(array));
 
         // Sorting by choice
-        System.out.println("\nArray after sorting by choice: ");
+        System.out.println("\n---Sorting by choice---");
         printArray(SortingByChoice.sortingByChoice(array));
+
+        // Sorting by insertion
+        System.out.println("\n---Sorting by insertion---");
+        printArray(SortingByInsertion.sortingByInsertion(array));
 
     }
 
@@ -27,10 +28,13 @@ public class Main {
         Random r = new Random();
         for (int i = 0; i < ARRAY_SIZE; i++) {
             array[i] = r.nextInt(35);
+            System.out.print(array[i] + " ");
         }
+        System.out.println();
     }
 
     public static void printArray(int[] array){
+        System.out.println("Array after sorting: ");
         for (int j = 0; j < ARRAY_SIZE; j++) {
             System.out.print(array[j] + " ");
         }

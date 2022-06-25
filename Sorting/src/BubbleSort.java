@@ -11,6 +11,8 @@ public class BubbleSort {
      *
      * */
     public static int[] bubbleSort(int[] array) {
+        long startTime = System.nanoTime();
+
         int temp = 0;
         int count = 0;
 
@@ -24,6 +26,9 @@ public class BubbleSort {
             }
             count++;
         }
+        long stopTime = System.nanoTime();
+        System.out.println("Time: " + (stopTime - startTime) + " ns");
+
         return array;
     }
 

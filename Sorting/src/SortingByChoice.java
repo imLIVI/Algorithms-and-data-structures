@@ -11,6 +11,8 @@ public class SortingByChoice {
      *
      * */
     public static int[] sortingByChoice(int[] array) {
+        long startTime = System.nanoTime();
+
         int min;
         int positionMin = 0;
         int count = 0;
@@ -38,6 +40,9 @@ public class SortingByChoice {
             count++;
 
         }
+        long stopTime = System.nanoTime();
+        System.out.println("Time: " + (stopTime - startTime) + " ns");
+
         return array;
     }
 }
