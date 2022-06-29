@@ -2,16 +2,16 @@ import java.util.Random;
 
 public class Main {
     public static final int ARRAY_SIZE = 10;
-    public static int[] array = new int[ARRAY_SIZE];
+    //public static int[] array = new int[ARRAY_SIZE];
 
     public static void main(String[] args) {
 
         // Filling an array with random numbers
         System.out.println("Array before sorting: ");
-        fillArray();
+        //fillArray();
 
         // Bubble sort
-        System.out.println("\n---Bubble sorting---");
+        /*System.out.println("\n---Bubble sorting---");
         printArray(BubbleSort.bubbleSort(array));
 
         // Sorting by choice
@@ -20,11 +20,16 @@ public class Main {
 
         // Sorting by insertion
         System.out.println("\n---Sorting by insertion---");
-        printArray(SortingByInsertion.sortingByInsertion(array));
+        printArray(SortingByInsertion.sortingByInsertion(array));*/
+
+        System.out.println("\n---Sorting by insertion---");
+        int[] array = {6,4,3,7,5,1,2};
+        MergeSorting.mergeSorting(array);
+        //printArray(MergeSorting.mergeSorting(array));
 
     }
 
-    public static void fillArray() {
+    /*public static void fillArray() {
         Random r = new Random();
         for (int i = 0; i < ARRAY_SIZE; i++) {
             array[i] = r.nextInt(35);
@@ -39,6 +44,6 @@ public class Main {
             System.out.print(array[j] + " ");
         }
         System.out.println();
-    }
+    }*/
 
 }
