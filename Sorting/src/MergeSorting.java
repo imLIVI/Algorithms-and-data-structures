@@ -2,15 +2,24 @@ import java.util.Arrays;
 
 public class MergeSorting {
     /**
-     * Program invariant: the numbers before [posSorted] - sorted
-     * <p>
+     * Program invariant: the array after "merge" (function) - sorted
+     *
      * Program complexity:
-     * 1-st iteration: 1 comparisons
-     * 2-nd iteration: 2 comparisons
+     *                                       ---- SIZE OF ARRAY after each recursion call ----
+     * 1-st level of recursion:                        (0...n)                                   sum = n
+     *                                              /            \
+     * 2-nd level of recursion:            (0...n/2)              (n/2...n)                      sum = n
+     *                                      /    \               /          \
+     * 3-nd level of recursion:    (0...n/4)    (n/4...n/2)  (n/2...3n/4)    (3n/4...n)          sum = n
      * ...
-     * n-1 iteration: (n-1) comparison
-     * So: 1 + 2 + ... + n-1 ~ n*(n - 1)/2 ~ n^2/2 ~ O(n^2)
-     */
+     * On each level the complexity is const = O(n)
+     *
+     * Number of levels = log2(n)
+     *
+     * => So program complexity = O (n*log2(n))
+     *
+     * But using memory = O(n) (for function "merge")
+     * */
     public static void mergeSorting(int[] array, int len) {
 
         // Basic case
