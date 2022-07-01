@@ -2,15 +2,23 @@ import java.util.Arrays;
 
 public class BubbleSort extends Sorting{
     /**
-     * Program invariant: the numbers that right of [array.length - 1 - count] - sorted
+     * Program invariant: the array after "merge" (function) - sorted
      *
      * Program complexity:
-     * 1-st iteration: (n-1) comparisons
-     * 2-nd iteration: (n-2) comparisons
+     *                                       ---- SIZE OF ARRAY after each recursion call ----
+     * 1-st level of recursion:                        (0...n)                                   sum = n
+     *                                              /            \
+     * 2-nd level of recursion:            (0...n/2)              (n/2...n)                      sum = n
+     *                                      /    \               /          \
+     * 3-nd level of recursion:    (0...n/4)    (n/4...n/2)  (n/2...3n/4)    (3n/4...n)          sum = n
      * ...
-     * n-1 iteration: 1 comparison
-     * So: (n-1) + (n-2) + ... + 1 ~ n*(n - 1)/2 ~ n^2/2 ~ O(n^2)
+     * On each level the complexity is const = O(n)
      *
+     * Number of levels = log2(n)
+     *
+     * => So program complexity = O (n*log2(n))
+     *
+     * But using memory = O(n) (for function "merge")
      * */
     private int[] array;
     private int arraySize;
