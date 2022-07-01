@@ -1,4 +1,6 @@
-public class BubbleSort {
+import java.util.Arrays;
+
+public class BubbleSort extends Sorting{
     /**
      * Program invariant: the numbers that right of [array.length - 1 - count] - sorted
      *
@@ -10,7 +12,16 @@ public class BubbleSort {
      * So: (n-1) + (n-2) + ... + 1 ~ n*(n - 1)/2 ~ n^2/2 ~ O(n^2)
      *
      * */
-    public static int[] bubbleSort(int[] array) {
+    private int[] array;
+    private int arraySize;
+
+    BubbleSort(int[] arr){
+        this.arraySize = arr.length;
+        this.array = Arrays.copyOf(arr, arraySize);
+    }
+
+    @Override
+    public void sort() {
         long startTime = System.nanoTime();
 
         int temp = 0;
@@ -27,9 +38,7 @@ public class BubbleSort {
             count++;
         }
         long stopTime = System.nanoTime();
-        System.out.println("Time: " + (stopTime - startTime) + " ns");
 
-        return array;
+        printInformation(array, stopTime - startTime);
     }
-
 }

@@ -1,4 +1,6 @@
-public class SortingByInsertion {
+import java.util.Arrays;
+
+public class SortingByInsertion extends Sorting{
     /**
      * Program invariant: the numbers before [posSorted] - sorted
      * <p>
@@ -9,7 +11,16 @@ public class SortingByInsertion {
      * n-1 iteration: (n-1) comparison
      * So: 1 + 2 + ... + n-1 ~ n*(n - 1)/2 ~ n^2/2 ~ O(n^2)
      */
-    public static int[] sortingByInsertion(int[] array) {
+    private int[] array;
+    private int arraySize;
+
+    SortingByInsertion(int[] arr){
+        this.arraySize = arr.length;
+        this.array = Arrays.copyOf(arr, arraySize);
+    }
+
+    @Override
+    public void sort() {
         long startTime = System.nanoTime();
 
         int temp = 0;
@@ -28,6 +39,6 @@ public class SortingByInsertion {
         long stopTime = System.nanoTime();
         System.out.println("Time: " + (stopTime - startTime) + " ns");
 
-        return array;
+        printInformation(array, stopTime - startTime);
     }
 }

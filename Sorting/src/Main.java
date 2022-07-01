@@ -1,35 +1,47 @@
+import java.util.Arrays;
 import java.util.Random;
 
 public class Main {
     public static final int ARRAY_SIZE = 10;
-    //public static int[] array = new int[ARRAY_SIZE];
 
     public static void main(String[] args) {
 
+        int[] array = new int[ARRAY_SIZE];
+
         // Filling an array with random numbers
         System.out.println("Array before sorting: ");
-        //fillArray();
+        fillArray(array);
 
         // Bubble sort
-        /*System.out.println("\n---Bubble sorting---");
-        printArray(BubbleSort.bubbleSort(array));
+        System.out.println("\n---Bubble sorting---");
+        Sorting bubbleSort = new BubbleSort(array);
+        bubbleSort.sort();
+        //printArray(BubbleSort.bubbleSort(array));
 
         // Sorting by choice
         System.out.println("\n---Sorting by choice---");
-        printArray(SortingByChoice.sortingByChoice(array));
+        Sorting sortingByChoice = new SortingByChoice(array);
+        sortingByChoice.sort();
 
         // Sorting by insertion
         System.out.println("\n---Sorting by insertion---");
-        printArray(SortingByInsertion.sortingByInsertion(array));*/
+        Sorting sortingByInsertion = new SortingByChoice(array);
+        sortingByInsertion.sort();
 
-        System.out.println("\n---Sorting by insertion---");
-        int[] array = {6,4,3,7,5,1,2};
-        MergeSorting.mergeSorting(array);
-        //printArray(MergeSorting.mergeSorting(array));
+        System.out.println("\n---Sorting by merge---");
+        int[] arr = Arrays.copyOf(array, ARRAY_SIZE);
+
+        long startTime = System.nanoTime();
+        MergeSorting.mergeSorting(arr, ARRAY_SIZE);
+        long stopTime = System.nanoTime();
+
+        System.out.println("Time: " + (stopTime - startTime) + " ns");
+        printArray(arr);
+
 
     }
 
-    /*public static void fillArray() {
+    private static void fillArray(int[] array) {
         Random r = new Random();
         for (int i = 0; i < ARRAY_SIZE; i++) {
             array[i] = r.nextInt(35);
@@ -44,6 +56,6 @@ public class Main {
             System.out.print(array[j] + " ");
         }
         System.out.println();
-    }*/
+    }
 
 }
