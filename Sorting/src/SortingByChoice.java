@@ -1,4 +1,6 @@
-public class SortingByChoice {
+import java.util.Arrays;
+
+public class SortingByChoice extends Sorting{
     /**
      * Program invariant: the numbers that left of count - sorted
      *
@@ -10,7 +12,16 @@ public class SortingByChoice {
      * So: n + (n-1) + (n-2) + ... + 0 ~ n*(n - 1)/2 ~ n^2/2 ~ O(n^2)
      *
      * */
-    public static int[] sortingByChoice(int[] array) {
+    private int[] array;
+    private int arraySize;
+
+    SortingByChoice(int[] arr){
+        this.arraySize = arr.length;
+        this.array = Arrays.copyOf(arr, arraySize);
+    }
+
+    @Override
+    public void sort() {
         long startTime = System.nanoTime();
 
         int min;
@@ -41,8 +52,8 @@ public class SortingByChoice {
 
         }
         long stopTime = System.nanoTime();
-        System.out.println("Time: " + (stopTime - startTime) + " ns");
 
-        return array;
+        printInformation(array, stopTime - startTime);
     }
+
 }

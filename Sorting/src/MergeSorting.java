@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class MergeSorting {
     /**
      * Program invariant: the numbers before [posSorted] - sorted
@@ -9,66 +11,54 @@ public class MergeSorting {
      * n-1 iteration: (n-1) comparison
      * So: 1 + 2 + ... + n-1 ~ n*(n - 1)/2 ~ n^2/2 ~ O(n^2)
      */
-    public static int middle;
-    public static int[] left;
-    public static int[] right;
-    public static int temp;
-    public static int count = 0;
-
-    public static int[] mergeSorting(int[] array) {
-        //long startTime = System.nanoTime();
+    public static void mergeSorting(int[] array, int len) {
 
         // Basic case
-        if (array.length == 1) {
-            return array;
+        if (len < 2) {
+            return ;
         }
 
         // Looking for a middle of array
-        middle = (int)Math.round((double) array.length/2);
+        int middle = len/2;
 
         // Divide array on two arrays
-        left = new int[middle];
-        right = new int[array.length - middle];
+        int[] left = new int[middle];
+        int[] right = new int[len - middle];
 
         // Filling arrays
         for (int i = 0; i < middle; i++) {
             left[i] = array[i];
         }
-        for (int j = middle; j < array.length; j++) {
+        for (int j = middle; j < len; j++) {
             right[j - middle] = array[j];
         }
 
         // Recursion
-        int[] left_sorted = mergeSorting(left);
-        int[] right_sorted = mergeSorting(right);
+        mergeSorting(left, middle);
+        mergeSorting(right, len - middle);
 
-        return merge(left_sorted, right_sorted);
+        /**
+         * The most difficult operation
+         *
+         * */
+        merge(array, left, right, middle, len - middle);
     }
 
-    public static int[] merge(int[] left, int[] right) {
-        int mergeArrSize = left.length + right.length;
-        int[] mergeArr = new int[mergeArrSize];
+    public static void merge(int[] array, int[] left, int[] right, int lenL, int lenR) {
         int l = 0, r = 0, m = 0;
 
-        while (l < left.length || r < right.length) {
-            if (l == left.length) {
-                mergeArr[m] = right[r];
-                r++;
-            } else if (r == right.length) {
-                mergeArr[m] = left[l];
-                l++;
-            } else {
-                if (left[l] <= right[r]) {
-                    mergeArr[m] = left[l];
-                    l++;
-                } else {
-                    mergeArr[m] = right[r];
-                    r++;
-                    m++;
-                }
-            }
+        while (l < lenL && r < lenR) {
+            if (left[l] <= right[r])
+                array[m++] = left[l++];
+            else
+                array[m++] = right[r++];
         }
 
-        return mergeArr;
+        while (l < lenL)
+            array[m++] = left[l++];
+
+        while (r < lenR)
+            array[m++] = right[r++];
+
     }
 }
