@@ -71,3 +71,64 @@ love
  13 velo  14 veol  15 vloe  16 vleo  17 voel  18 vole 
  19 elov  20 elvo  21 eovl  22 eolv  23 evlo  24 evol 
 ```
+# Sorting
+
+### Description
+
+In this folder are implemented:
+ * Bubble sort
+ * Sorting by choice
+ * Sorting by insertion
+ * Merge sort
+ * Quick sort
+
+### The functionality of the program
+* Each algorithm contains a calculation of the complexity and an invariant
+* Comparison of working time
+<table>
+  <tr>
+    <th></th>
+    <th colspan="4">Time, ns</th>
+  </tr>
+    <th>Number of elements in array</th>
+    <th>n = 10</th>
+    <th>n = 100</th>
+    <th>n = 1000</th>
+    <th>n = 10 000</th>
+  </tr>
+  <tr>
+    <td>Bubble sort</td>
+    <td>14700.0</td>
+    <td>250800.0</td>
+    <td>6864100.0</td>
+    <td>3.046468E8</td>
+  </tr>
+  <tr>
+    <td>Sorting by choice</td>
+    <td>8800.0</td>
+    <td>179600.0</td>
+    <td>4055600.0</td>
+    <td>1.388091E8</td>
+  </tr>
+  <tr>
+    <td>Sorting by insertion</td>
+    <td>9000.0</td>
+    <td>199100.0</td>
+    <td>4167900.0</td>
+    <td>1.119205E8</td>
+  </tr>
+  <tr>
+    <td>Merge sort</td>
+    <td>1092700.0</td>
+    <td>828200.0</td>
+    <td>1724500.0</td>
+    <td>7457900.0</td>
+  </tr>
+  <tr>
+    <td>Quick sort</td>
+    <td>921700.0</td>
+    <td>855500.0</td>
+    <td>1196700.0</td>
+    <td>10650600.0</td>
+  </tr>
+</table>
