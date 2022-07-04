@@ -22,13 +22,12 @@ public class SortingByInsertion extends Sorting{
     @Override
     public void sort() {
         long startTime = System.nanoTime();
-
         int temp = 0;
         int posSorted = 0;
 
         while (posSorted != array.length - 1) {
             posSorted++;
-            for (int i = posSorted; i < 0; i--) {
+            for (int i = posSorted; i > 0; i--) {
                 if (array[i] < array[i - 1]) {
                     temp = array[i];
                     array[i] = array[i - 1];

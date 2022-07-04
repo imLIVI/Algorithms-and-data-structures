@@ -31,11 +31,8 @@ public class Main {
         sortingByInsertion.sort();
 
         // Quick sort
-        /**
-         * TODO: Define complexity and invariant*/
         System.out.println("\n---Quick sort---");
         int[] arr = Arrays.copyOf(array, ARRAY_SIZE);
-        //int[] arr = {8,2,9,4,7,6,1,5,3};
         long startTime = System.nanoTime();
         QuickSort.quickSort(arr, 0, ARRAY_SIZE - 1);
         long stopTime = System.nanoTime();
