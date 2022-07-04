@@ -24,8 +24,6 @@ public class Main {
         sortingByChoice.sort();
 
         // Sorting by insertion
-        /**
-         * TODO: Modify because this algorithms works incorrect*/
         System.out.println("\n---Sorting by insertion---");
         Sorting sortingByInsertion = new SortingByInsertion(array);
         sortingByInsertion.sort();
