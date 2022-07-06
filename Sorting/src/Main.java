@@ -2,7 +2,7 @@ import java.util.Arrays;
 import java.util.Random;
 
 public class Main {
-    public static final int ARRAY_SIZE = 100;
+    public static final int ARRAY_SIZE = 10000;
 
     public static void main(String[] args) {
 
@@ -45,8 +45,6 @@ public class Main {
         stopTime = System.nanoTime();
         System.out.println("Time: " + (stopTime - startTime) + " ns");
         printArray(arr);
-
-
     }
 
     private static void fillArray(int[] array) {
@@ -58,7 +56,7 @@ public class Main {
         System.out.println();
     }
 
-    public static void printArray(int[] array){
+    public static void printArray(int[] array) {
         System.out.println("Array after sorting: ");
         for (int j = 0; j < ARRAY_SIZE; j++) {
             System.out.print(array[j] + " ");

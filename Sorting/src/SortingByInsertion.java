@@ -1,6 +1,6 @@
 import java.util.Arrays;
 
-public class SortingByInsertion extends Sorting{
+public class SortingByInsertion extends Sorting {
     /**
      * Program invariant: the numbers before [posSorted] - sorted
      * <p>
@@ -14,7 +14,7 @@ public class SortingByInsertion extends Sorting{
     private int[] array;
     private int arraySize;
 
-    SortingByInsertion(int[] arr){
+    SortingByInsertion(int[] arr) {
         this.arraySize = arr.length;
         this.array = Arrays.copyOf(arr, arraySize);
     }
@@ -36,7 +36,6 @@ public class SortingByInsertion extends Sorting{
             }
         }
         long stopTime = System.nanoTime();
-        System.out.println("Time: " + (stopTime - startTime) + " ns");
 
         printInformation(array, stopTime - startTime);
     }
