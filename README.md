@@ -132,3 +132,59 @@ In this folder are implemented:
     <td>10650600.0</td>
   </tr>
 </table>
+
+# Stack
+
+## Description
+A singly connected stack contains 2 main classes with the following fields:
+
+* Node:
+  * value
+  * prev element
+
+* Stack:
+  * head - pointer to the top element 
+
+### The functionality of the program
+* adding a new element to stack: <code>push()</code>
+* removing an element from the stack: <code>pop()</code>
+* stack rotation: <code>reverse()</code>
+
+### Example
+```
+EMPTY
+Add 0
+0
+Add 1
+1 -> 0
+Add 2
+2 -> 1 -> 0
+Add 3
+3 -> 2 -> 1 -> 0
+Add 4
+4 -> 3 -> 2 -> 1 -> 0
+Add 5
+5 -> 4 -> 3 -> 2 -> 1 -> 0
+Remove from the stack
+5
+4 -> 3 -> 2 -> 1 -> 0
+Remove from the stack
+4
+3 -> 2 -> 1 -> 0
+Reverse!
+0 -> 1 -> 2 -> 3
+Remove from the stack
+0
+1 -> 2 -> 3
+Remove from the stack
+1
+2 -> 3
+Reverse!
+3 -> 2
+Remove from the stack
+3
+2
+Remove from the stack
+2
+EMPTY
+```
