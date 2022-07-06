@@ -8,11 +8,11 @@ public class Main {
         String inputStr = null;
         String[] partsOfStr = null;
 
-        System.out.println("Работа с программой:");
-        System.out.println(" - добавление в стек:            'Добавим [число]'");
-        System.out.println(" - извлечение значения со стека: 'Снимем со стека'");
-        System.out.println(" - разворот стека:               'Ревёрс!'");
-        System.out.println(" - выход из программы:           'end'");
+        System.out.println("Work with program:");
+        System.out.println(" - add to stack:      'Add [number]'");
+        System.out.println(" - remove from stack: 'Remove from the stack'");
+        System.out.println(" - stack rotation:    'Reverse!'");
+        System.out.println(" - exit:              'end'");
         System.out.println(" ------------------------------------------------ \n");
 
         stack.printme();
@@ -22,12 +22,12 @@ public class Main {
             if (inputStr.equals("end")) {
                 break;
             }
-            if (inputStr.contains("Снимем со стека")) {
+            if (inputStr.contains("Remove from the stack")) {
                 System.out.println(stack.pop());
-            } else if (inputStr.contains("Добавим")) {
+            } else if (inputStr.contains("Add")) {
                 partsOfStr = inputStr.split(" ");
                 stack.push(Integer.parseInt(partsOfStr[1]));
-            } else if (inputStr.equals("Ревёрс!") || inputStr.equals("Реверс!")) {
+            } else if (inputStr.equals("Reverse!") || inputStr.equals("reverse!") || inputStr.equals("reverse")) {
                 stack.reverse();
             } else {
                 System.out.println("The input is incorrect!");
